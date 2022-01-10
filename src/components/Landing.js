@@ -24,9 +24,13 @@ const Main = styled.main`
 const Title = styled.h1`
   font-family: 'Nixie One', cursive;
   font-size: 40px;
+  font-weight: 400;
   color: #fff;
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px green, 0 0 82px green, 0 0 92px green,
     0 0 102px green, 0 0 151px green;
+  @media (min-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -35,6 +39,9 @@ const Subtitle = styled.h2`
   font-size: 16px;
   color: #fff;
   margin-top: 20px;
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Button = styled.button`
@@ -52,6 +59,11 @@ const Button = styled.button`
     transform: scale(1.1);
     transition: all 0.1s ease-in-out;
     opacity: 0.6;
+  }
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    margin-top: 60px;
   }
 `;
 
