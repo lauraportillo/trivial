@@ -15,6 +15,14 @@ const Item = styled.li`
   text-transform: uppercase;
   margin-left: 5px;
   margin-right: 5px;
+
+  &:hover {
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px green, 0 0 82px green, 0 0 92px green,
+      0 0 102px green, 0 0 151px green;
+    transform: scale(1.2);
+    transition: all 0.1s ease-in-out;
+  }
 `;
 
 const Icon = styled.a`
