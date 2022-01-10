@@ -1,9 +1,16 @@
 // React
-import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+// Components
+import Landing from './Landing';
 
 const App = () => {
-  return <div>TRIVIAL</div>;
+  return (
+    <Switch>
+      <Route exact path="/">
+        <Landing />
+      </Route>
+    </Switch>
+  );
 };
 
 export default App;
