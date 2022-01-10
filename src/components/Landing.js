@@ -23,30 +23,54 @@ const Main = styled.main`
 
 const Title = styled.h1`
   font-family: 'Nixie One', cursive;
-  font-size: 30px;
+  font-size: 40px;
   color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px red, 0 0 82px red, 0 0 92px red, 0 0 102px red,
-    0 0 151px red;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px green, 0 0 82px green, 0 0 92px green,
+    0 0 102px green, 0 0 151px green;
 `;
 
 const Subtitle = styled.h2`
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
   color: #fff;
+`;
+
+const Button = styled.button`
+  width: 60px;
+  height: 60px;
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin-top: 40px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+    opacity: 0.6;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
 `;
 
 const Landing = () => {
   return (
     <Container>
+      <header></header>
       <Main>
         <Title>trivial</Title>
-        <Subtitle>Welcome to my react.js trivial number quiz!</Subtitle>
+        <Subtitle>Welcome to trivial number quiz!</Subtitle>
 
-        <button className="home__btn">
+        <Button>
           <Link to="/instructionsEn">
-            <img className="home__btn--img" src={icon} alt="start button" />
+            <Image title="Start" src={icon} alt="start button" />
           </Link>
-        </button>
+        </Button>
       </Main>
       <Footer />
     </Container>
