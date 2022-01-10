@@ -15,8 +15,6 @@ const Item = styled.li`
   text-transform: uppercase;
   margin-left: 5px;
   margin-right: 5px;
-  list-style: none;
-  text-decoration: none;
 `;
 
 const Icon = styled.a`

@@ -34,11 +34,12 @@ const Subtitle = styled.h2`
   font-weight: 200;
   font-size: 16px;
   color: #fff;
+  margin-top: 20px;
 `;
 
 const Button = styled.button`
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background: none;
   color: inherit;
   border: none;
