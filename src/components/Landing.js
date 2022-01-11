@@ -77,7 +77,7 @@ const Landing = () => {
       <header></header>
       <Main>
         <Title>trivial</Title>
-        <Subtitle>Welcome to trivial number quiz!</Subtitle>
+        <Subtitle>Welcome to trivial art quiz!</Subtitle>
 
         <Button>
           <Link to="/instructionsEn">
