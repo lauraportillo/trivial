@@ -1,14 +1,14 @@
 // React
 import { Link } from 'react-router-dom';
 // Components
-import Footer from './Footer';
+import FooterBlack from './FooterBlack';
 // Styles
 import styled from 'styled-components';
 
 const Trivial = (props) => {
   return (
     <>
-      <div></div>
+      <div>esto es una prueba</div>
     </>
   );
 };
