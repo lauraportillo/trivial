@@ -7,6 +7,7 @@ import FooterBlack from './FooterBlack';
 import styled from 'styled-components';
 // Services
 import getDataFromApi from '../services/getDataFromApi';
+// import localStorage from './services/localStorage';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -46,7 +47,9 @@ const Trivial = (props) => {
       <Header>
         <Title>arts&trivial</Title>
       </Header>
-      <main></main>
+      <main>
+        <section></section>
+      </main>
       <FooterBlack />
     </Container>
   );
