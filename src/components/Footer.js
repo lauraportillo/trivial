@@ -9,12 +9,19 @@ const Container = styled.ul`
   font-size: 14px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 200;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Item = styled.li`
   text-transform: uppercase;
   margin-left: 5px;
   margin-right: 5px;
+  @media (min-width: 768px) {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
 
   &:hover {
     color: #fff;
