@@ -2,6 +2,7 @@
 import { Route, Switch } from 'react-router-dom';
 // Components
 import Landing from './Landing';
+import Trivial from './Trivial';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 
@@ -21,6 +22,11 @@ const App = () => {
       <Route exact path="/">
         <GlobalStyle />
         <Landing />
+      </Route>
+
+      <Route exact path="/trivial">
+        <GlobalStyle />
+        <Trivial />
       </Route>
     </Switch>
   );

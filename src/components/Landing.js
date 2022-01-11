@@ -80,7 +80,7 @@ const Landing = () => {
         <Subtitle>Welcome to art trivial quiz!</Subtitle>
 
         <Button>
-          <Link to="/instructionsEn">
+          <Link to="/trivial">
             <Image title="Start" src={icon} alt="start button" />
           </Link>
         </Button>
