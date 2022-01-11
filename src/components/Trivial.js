@@ -1,6 +1,6 @@
 // React
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // Components
 import FooterBlack from './FooterBlack';
 // Styles
@@ -35,9 +35,9 @@ const Title = styled.h1`
 const Trivial = (props) => {
   //state
   const [trivialArts, setTrivialArts] = useState([]);
+
   //component life and promise
   useEffect(() => {
-    console.log(getDataFromApi());
     getDataFromApi().then((data) => setTrivialArts(data));
   }, []);
 
