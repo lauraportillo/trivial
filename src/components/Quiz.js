@@ -38,11 +38,6 @@ const Main = styled.main`
   align-items: center;
 `;
 
-// const Section1 = styled.section``;
-// const Section2 = styled.section``;
-// const Form = styled.section``;
-// const Section3 = styled.section``;
-
 const Quiz = () => {
   //state
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -53,16 +48,15 @@ const Quiz = () => {
   const chooseOption = (option) => {
     setOptionChosen(option);
   };
-
   const nextQuestion = () => {
-    if (Questions[currentQuestion].answer === optionChosen) {
+    if (Questions[currentQuestion].correct_answer === optionChosen) {
       setScore(score + 1);
     }
     setCurrentQuestion(currentQuestion + 1);
   };
 
   const finishQuiz = () => {
-    if (Questions[currentQuestion].answer === optionChosen) {
+    if (Questions[currentQuestion].correct_answer === optionChosen) {
       setScore(score + 1);
     }
     setGameState('finished');
@@ -72,25 +66,7 @@ const Quiz = () => {
   // arr1.sort(function() { return Math.random() - 0.5 });
   // console.log(arr1)
 
-  // // PENSAR CÓMO HACER PARA QUE  Questions.incorrect_answers[0]='optionA'
-  // const optionA = 'optionA';
-  // const answerA = Questions.incorrect_answers[0];
-
-  // optionA = answerA;
   const counter = currentQuestion + 1;
-
-  // const optionA = Questions.correct_answer;
-  // const optionB = Questions.incorrect_answers[0];
-  // const optionC = Questions.incorrect_answers[1];
-  // const optionD = Questions.incorrect_answers[2];
-
-  // const options = {
-  //   optionA: 'optionA',
-  //   optionB: 'optionB',
-  //   optionC: 'optionC',
-  //   optionD: 'optionD',
-  //   asnwer: 'optionA',
-  // };
 
   return (
     <Container>
@@ -106,28 +82,28 @@ const Quiz = () => {
           <div>
             <button
               onClick={() => {
-                chooseOption('optionA');
+                chooseOption(Questions[currentQuestion].incorrect_answers[0]);
               }}
             >
               {Questions[currentQuestion].incorrect_answers[0]}
             </button>
             <button
               onClick={() => {
-                chooseOption('optionB');
+                chooseOption(Questions[currentQuestion].correct_answer);
               }}
             >
               {Questions[currentQuestion].correct_answer}
             </button>
             <button
               onClick={() => {
-                chooseOption('optionC');
+                chooseOption(Questions[currentQuestion].incorrect_answers[1]);
               }}
             >
               {Questions[currentQuestion].incorrect_answers[1]}
             </button>
             <button
               onClick={() => {
-                chooseOption('optionD');
+                chooseOption(Questions[currentQuestion].incorrect_answers[2]);
               }}
             >
               {Questions[currentQuestion].incorrect_answers[2]}
@@ -135,7 +111,7 @@ const Quiz = () => {
           </div>
 
           {currentQuestion === Questions.length - 1 ? (
-            <button onClick={finishQuiz} id="nextQuestion">
+            <button onClick={finishQuiz} id="finishuiz">
               Finish Quiz
             </button>
           ) : (
