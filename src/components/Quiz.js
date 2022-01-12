@@ -66,33 +66,34 @@ const Quiz = (props) => {
           <div>
             <button
               onClick={() => {
-                chooseOption('optionA');
+                chooseOption('incorrect_answers_0');
               }}
             >
               {Data[currentQuestion].incorrect_answers[0]}
             </button>
             <button
               onClick={() => {
-                chooseOption('optionB');
+                chooseOption('correct_answer');
               }}
             >
               {Data[currentQuestion].correct_answer}
             </button>
             <button
               onClick={() => {
-                chooseOption('optionC');
+                chooseOption('incorrect_answers_1');
               }}
             >
               {Data[currentQuestion].incorrect_answers[1]}
             </button>
             <button
               onClick={() => {
-                chooseOption('optionD');
+                chooseOption('incorrect_answers_2');
               }}
             >
               {Data[currentQuestion].incorrect_answers[2]}
             </button>
           </div>
+          <button>Next Question</button>
         </section>
       </Main>
       <FooterBlack />

@@ -19,8 +19,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  //state
+  // Global state
   const [gameState, setGameState] = useState('menu');
+  const [score, setScore] = useState(0);
 
   return (
     <GameStateContext.Provider
