@@ -68,6 +68,8 @@ const Quiz = () => {
     setGameState('finished');
   };
 
+  const counter = currentQuestion + 1;
+
   return (
     <Container>
       <Header>
@@ -75,7 +77,7 @@ const Quiz = () => {
       </Header>
       <Main>
         <section>
-          <h2> Question {currentQuestion} of 10</h2>
+          <h2> Question {counter} of 10</h2>
 
           <h2> {Questions[currentQuestion].question}</h2>
 
