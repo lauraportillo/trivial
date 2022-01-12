@@ -82,18 +82,19 @@ const Quiz = () => {
           <div>
             <button
               onClick={() => {
-                chooseOption(Questions[currentQuestion].incorrect_answers[0]);
-              }}
-            >
-              {Questions[currentQuestion].incorrect_answers[0]}
-            </button>
-            <button
-              onClick={() => {
                 chooseOption(Questions[currentQuestion].correct_answer);
               }}
             >
               {Questions[currentQuestion].correct_answer}
             </button>
+            <button
+              onClick={() => {
+                chooseOption(Questions[currentQuestion].incorrect_answers[0]);
+              }}
+            >
+              {Questions[currentQuestion].incorrect_answers[0]}
+            </button>
+
             <button
               onClick={() => {
                 chooseOption(Questions[currentQuestion].incorrect_answers[1]);
@@ -111,7 +112,7 @@ const Quiz = () => {
           </div>
 
           {currentQuestion === Questions.length - 1 ? (
-            <button onClick={finishQuiz} id="finishuiz">
+            <button onClick={finishQuiz} id="finishquiz">
               Finish Quiz
             </button>
           ) : (
