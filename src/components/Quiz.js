@@ -76,6 +76,7 @@ const Quiz = () => {
       <Main>
         <section>
           <h2> Question {currentQuestion} of 10</h2>
+
           <h2> {Questions[currentQuestion].question}</h2>
 
           <div>
