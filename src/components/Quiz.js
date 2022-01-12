@@ -44,13 +44,29 @@ const Main = styled.main`
 // const Form = styled.section``;
 // const Section3 = styled.section``;
 
-const Quiz = (props) => {
+const Quiz = () => {
   //state
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState('');
 
+  const { gameState, setGameState, score, setScore } = useContext(GameStateContext);
+
   const chooseOption = (option) => {
     setOptionChosen(option);
+  };
+
+  const nextQuestion = () => {
+    if (Data[currentQuestion].answer === optionChosen) {
+      setScore(score + 1);
+    }
+    setCurrentQuestion(currentQuestion + 1);
+  };
+
+  const finishQuiz = () => {
+    if (Data[currentQuestion].answer === optionChosen) {
+      setScore(score + 1);
+    }
+    setGameState('finished');
   };
 
   return (
@@ -93,7 +109,16 @@ const Quiz = (props) => {
               {Data[currentQuestion].incorrect_answers[2]}
             </button>
           </div>
-          <button>Next Question</button>
+
+          {currentQuestion === Data.length - 1 ? (
+            <button onClick={finishQuiz} id="nextQuestion">
+              Finish Quiz
+            </button>
+          ) : (
+            <button onClick={nextQuestion} id="nextQuestion">
+              Next Question
+            </button>
+          )}
         </section>
       </Main>
       <FooterBlack />

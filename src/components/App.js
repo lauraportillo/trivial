@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   text-decoration: none;
   list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
   }
 `;
 
@@ -28,6 +29,8 @@ const App = () => {
       value={{
         gameState,
         setGameState,
+        score,
+        setScore,
       }}
     >
       <GlobalStyle />

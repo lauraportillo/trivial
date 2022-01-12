@@ -6,7 +6,7 @@ import FooterBlack from './FooterBlack';
 // Styles
 import styled from 'styled-components';
 
-const EndScreen = (props) => {
+const EndScreen = () => {
   return (
     <>
       <div>THE END</div>
