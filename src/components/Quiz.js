@@ -5,9 +5,6 @@ import React, { useEffect, useState } from 'react';
 import FooterBlack from './FooterBlack';
 // Styles
 import styled from 'styled-components';
-// Services
-import getDataFromApi from '../services/getDataFromApi';
-// import localStorage from './services/localStorage';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -32,27 +29,36 @@ const Title = styled.h1`
     margin-top: 40px;
   }
 `;
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-const Trivial = (props) => {
+// const Section1 = styled.section``;
+// const Section2 = styled.section``;
+// const Form = styled.section``;
+// const Section3 = styled.section``;
+
+const Quiz = (props) => {
   //state
-  const [trivialArts, setTrivialArts] = useState([]);
-
-  //component life and promise
-  useEffect(() => {
-    getDataFromApi().then((data) => setTrivialArts(data));
-  }, []);
 
   return (
     <Container>
       <Header>
         <Title>arts&trivial</Title>
       </Header>
-      <main>
-        <section></section>
-      </main>
+      <Main>
+        <section>
+          <h2> Question 1 of 10</h2>
+          <div></div>
+          <h2> la pregunta del api</h2>
+        </section>
+      </Main>
       <FooterBlack />
     </Container>
   );
 };
 
-export default Trivial;
+export default Quiz;
