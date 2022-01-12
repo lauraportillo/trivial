@@ -70,6 +70,17 @@ const Quiz = () => {
 
   const counter = currentQuestion + 1;
 
+  //   // para ordenar el array de forma aleatoria
+  //   var arr1 = ["a", "b", "c", "d"];
+  // arr1.sort(function() { return Math.random() - 0.5 });
+  // console.log(arr1)
+
+  // // PENSAR CÓMO HACER PARA QUE  Questions.incorrect_answers[0]='optionA'
+  // const optionA = 'optionA';
+  // const answerA = Questions.incorrect_answers[0];
+
+  // optionA = answerA;
+
   return (
     <Container>
       <Header>
@@ -84,28 +95,28 @@ const Quiz = () => {
           <div>
             <button
               onClick={() => {
-                chooseOption('incorrect_answers_0');
+                chooseOption('optionA');
               }}
             >
               {Questions[currentQuestion].incorrect_answers[0]}
             </button>
             <button
               onClick={() => {
-                chooseOption('correct_answer');
+                chooseOption('optionB');
               }}
             >
               {Questions[currentQuestion].correct_answer}
             </button>
             <button
               onClick={() => {
-                chooseOption('incorrect_answers_1');
+                chooseOption('optionC');
               }}
             >
               {Questions[currentQuestion].incorrect_answers[1]}
             </button>
             <button
               onClick={() => {
-                chooseOption('incorrect_answers_2');
+                chooseOption('optionD');
               }}
             >
               {Questions[currentQuestion].incorrect_answers[2]}
