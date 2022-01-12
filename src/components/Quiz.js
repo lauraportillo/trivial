@@ -1,4 +1,7 @@
 // React
+import { Data } from '../data/Data';
+import { useState } from 'react';
+
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
@@ -43,6 +46,12 @@ const Main = styled.main`
 
 const Quiz = (props) => {
   //state
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [optionChosen, setOptionChosen] = useState('');
+
+  const chooseOption = (option) => {
+    setOptionChosen(option);
+  };
 
   return (
     <Container>
@@ -52,8 +61,38 @@ const Quiz = (props) => {
       <Main>
         <section>
           <h2> Question 1 of 10</h2>
-          <div></div>
-          <h2> la pregunta del api</h2>
+          <h2> {Data[currentQuestion].question}</h2>
+
+          <div>
+            <button
+              onClick={() => {
+                chooseOption('optionA');
+              }}
+            >
+              {Data[currentQuestion].incorrect_answers[0]}
+            </button>
+            <button
+              onClick={() => {
+                chooseOption('optionB');
+              }}
+            >
+              {Data[currentQuestion].correct_answer}
+            </button>
+            <button
+              onClick={() => {
+                chooseOption('optionC');
+              }}
+            >
+              {Data[currentQuestion].incorrect_answers[1]}
+            </button>
+            <button
+              onClick={() => {
+                chooseOption('optionD');
+              }}
+            >
+              {Data[currentQuestion].incorrect_answers[2]}
+            </button>
+          </div>
         </section>
       </Main>
       <FooterBlack />
