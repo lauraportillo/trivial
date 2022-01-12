@@ -23,11 +23,17 @@ const App = () => {
   const [gameState, setGameState] = useState('menu');
 
   return (
-    <>
+    <GameStateContext.Provider
+      value={{
+        gameState,
+        setGameState,
+      }}
+    >
+      <GlobalStyle />
       {gameState === 'menu' && <Landing />}
       {gameState === 'playing' && <Quiz />}
       {gameState === 'finished' && <EndScreen />}
-    </>
+    </GameStateContext.Provider>
   );
 };
 

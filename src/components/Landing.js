@@ -73,6 +73,7 @@ const Image = styled.img`
 `;
 
 const Landing = () => {
+  const { gameState, setGameState } = useContext(GameStateContext);
   return (
     <Container>
       <header></header>
@@ -80,11 +81,13 @@ const Landing = () => {
         <Title>arts&trivial</Title>
         <Subtitle>Welcome to art trivial quiz!</Subtitle>
 
-        {/* <Button>
-          <Link to="/trivial">
-            <Image title="Start" src={icon} alt="start button" />
-          </Link>
-        </Button> */}
+        <Button
+          onClick={() => {
+            setGameState('playing');
+          }}
+        >
+          <Image title="Start" src={icon} alt="start button" />
+        </Button>
       </Main>
       <Footer />
     </Container>
