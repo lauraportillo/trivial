@@ -1,7 +1,6 @@
 // React
-import { Data } from '../data/Data';
+import { Questions } from '../data/Questions';
 import { useState } from 'react';
-
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
@@ -49,21 +48,21 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState('');
 
-  const { gameState, setGameState, score, setScore } = useContext(GameStateContext);
+  const { score, setScore, gameState, setGameState } = useContext(GameStateContext);
 
   const chooseOption = (option) => {
     setOptionChosen(option);
   };
 
   const nextQuestion = () => {
-    if (Data[currentQuestion].answer === optionChosen) {
+    if (Questions[currentQuestion].answer === optionChosen) {
       setScore(score + 1);
     }
     setCurrentQuestion(currentQuestion + 1);
   };
 
   const finishQuiz = () => {
-    if (Data[currentQuestion].answer === optionChosen) {
+    if (Questions[currentQuestion].answer === optionChosen) {
       setScore(score + 1);
     }
     setGameState('finished');
@@ -76,8 +75,8 @@ const Quiz = () => {
       </Header>
       <Main>
         <section>
-          <h2> Question 1 of 10</h2>
-          <h2> {Data[currentQuestion].question}</h2>
+          <h2> Question {currentQuestion} of 10</h2>
+          <h2> {Questions[currentQuestion].question}</h2>
 
           <div>
             <button
@@ -85,32 +84,32 @@ const Quiz = () => {
                 chooseOption('incorrect_answers_0');
               }}
             >
-              {Data[currentQuestion].incorrect_answers[0]}
+              {Questions[currentQuestion].incorrect_answers[0]}
             </button>
             <button
               onClick={() => {
                 chooseOption('correct_answer');
               }}
             >
-              {Data[currentQuestion].correct_answer}
+              {Questions[currentQuestion].correct_answer}
             </button>
             <button
               onClick={() => {
                 chooseOption('incorrect_answers_1');
               }}
             >
-              {Data[currentQuestion].incorrect_answers[1]}
+              {Questions[currentQuestion].incorrect_answers[1]}
             </button>
             <button
               onClick={() => {
                 chooseOption('incorrect_answers_2');
               }}
             >
-              {Data[currentQuestion].incorrect_answers[2]}
+              {Questions[currentQuestion].incorrect_answers[2]}
             </button>
           </div>
 
-          {currentQuestion === Data.length - 1 ? (
+          {currentQuestion === Questions.length - 1 ? (
             <button onClick={finishQuiz} id="nextQuestion">
               Finish Quiz
             </button>

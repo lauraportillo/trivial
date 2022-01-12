@@ -1,4 +1,4 @@
-export const Data = [
+export const Questions = [
   {
     category: 'Art',
     type: 'multiple',
@@ -11,7 +11,7 @@ export const Data = [
     category: 'Art',
     type: 'multiple',
     difficulty: 'medium',
-    question: 'Which time signature is commonly known as "Cut Time?"',
+    question: 'Which time signature is commonly known as "Cut Time"?',
     correct_answer: '2/2',
     incorrect_answers: ['4/4', '6/8', '3/4'],
   },
