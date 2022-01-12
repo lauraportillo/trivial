@@ -1,5 +1,6 @@
 // React
 import { useState } from 'react';
+import { GameStateContext } from '../context/QuizContext';
 // Components
 import Landing from './Landing';
 import Quiz from './Quiz';

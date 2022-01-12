@@ -1,5 +1,6 @@
 // React
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { GameStateContext } from '../context/QuizContext';
 // Components
 import Footer from './Footer';
 // Styles
@@ -79,11 +80,11 @@ const Landing = () => {
         <Title>arts&trivial</Title>
         <Subtitle>Welcome to art trivial quiz!</Subtitle>
 
-        <Button>
+        {/* <Button>
           <Link to="/trivial">
             <Image title="Start" src={icon} alt="start button" />
           </Link>
-        </Button>
+        </Button> */}
       </Main>
       <Footer />
     </Container>

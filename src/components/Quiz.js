@@ -1,6 +1,6 @@
 // React
-import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { GameStateContext } from '../context/QuizContext';
 // Components
 import FooterBlack from './FooterBlack';
 // Styles
