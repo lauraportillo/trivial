@@ -67,9 +67,6 @@ const Quiz = () => {
     }
     setGameState('finished');
   };
-
-  const counter = currentQuestion + 1;
-
   //   // para ordenar el array de forma aleatoria
   //   var arr1 = ["a", "b", "c", "d"];
   // arr1.sort(function() { return Math.random() - 0.5 });
@@ -80,6 +77,20 @@ const Quiz = () => {
   // const answerA = Questions.incorrect_answers[0];
 
   // optionA = answerA;
+  const counter = currentQuestion + 1;
+
+  // const optionA = Questions.correct_answer;
+  // const optionB = Questions.incorrect_answers[0];
+  // const optionC = Questions.incorrect_answers[1];
+  // const optionD = Questions.incorrect_answers[2];
+
+  // const options = {
+  //   optionA: 'optionA',
+  //   optionB: 'optionB',
+  //   optionC: 'optionC',
+  //   optionD: 'optionD',
+  //   asnwer: 'optionA',
+  // };
 
   return (
     <Container>
