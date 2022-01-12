@@ -1,8 +1,9 @@
 // React
-import { Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
 // Components
 import Landing from './Landing';
 import Quiz from './Quiz';
+import EndScreen from './EndScreen';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 
@@ -17,7 +18,16 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  return <></>;
+  //state
+  const [gameState, setGameState] = useState('menu');
+
+  return (
+    <>
+      {gameState === 'menu' && <Landing />}
+      {gameState === 'playing' && <Quiz />}
+      {gameState === 'finished' && <EndScreen />}
+    </>
+  );
 };
 
 export default App;
