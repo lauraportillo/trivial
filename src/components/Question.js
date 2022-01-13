@@ -1,6 +1,5 @@
 // React
 import { Questions } from '../data/Questions';
-import { useState } from 'react';
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 

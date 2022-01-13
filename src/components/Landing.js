@@ -73,7 +73,7 @@ const Image = styled.img`
 `;
 
 const Landing = () => {
-  const { gameState, setGameState } = useContext(GameStateContext);
+  const { setGameState } = useContext(GameStateContext);
   return (
     <Container>
       <header></header>
