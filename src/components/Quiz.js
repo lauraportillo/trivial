@@ -59,6 +59,19 @@ const NextButton = styled.button`
   text-align: center;
   outline: inherit;
 `;
+const FinishButton = styled.button`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+  width: 190px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid black 1px;
+  background-color: black;
+  text-align: center;
+  outline: inherit;
+`;
 
 const Quiz = () => {
   const { setGameState, score, setScore, currentQuestion, setCurrentQuestion, optionChosen } =
@@ -89,9 +102,9 @@ const Quiz = () => {
         <Subtitle> Question {counter} of 10</Subtitle>
         <Question />
         {currentQuestion === Questions.length - 1 ? (
-          <button onClick={finishQuiz} id="finishQuiz">
+          <FinishButton onClick={finishQuiz} id="finishQuiz">
             Finish Quiz
-          </button>
+          </FinishButton>
         ) : (
           <NextButton onClick={nextQuestion} id="nextQuestion">
             Next Question

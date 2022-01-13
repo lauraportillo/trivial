@@ -36,6 +36,42 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
 `;
+const Subtitle = styled.h2`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+`;
+
+const ScoreBox = styled.h2`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 20px;
+  color: white;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  border: solid black 1px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Reset = styled.button`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  color: black;
+  margin-top: 20px;
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid black 1px;
+  background-color: inherit;
+  text-align: center;
+  outline: inherit;
+`;
 
 const EndScreen = () => {
   const { setGameState, score, setScore, setCurrentQuestion, setOptionChosen } = useContext(GameStateContext);
@@ -53,12 +89,12 @@ const EndScreen = () => {
         <Title>arts&trivial</Title>
       </Header>
       <Main>
-        <div>here is your score!</div>
-        <h2>
+        <Subtitle>Here is your score!</Subtitle>
+        <ScoreBox>
           {score} / {Questions.length}
-        </h2>
+        </ScoreBox>
 
-        <button onClick={restartQuiz}>Restart Quiz</button>
+        <Reset onClick={restartQuiz}>Restart Quiz</Reset>
       </Main>
       <FooterBlack />
     </Container>
