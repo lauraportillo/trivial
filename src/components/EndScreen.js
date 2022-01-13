@@ -57,6 +57,7 @@ const ScoreBox = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background: linear-gradient(green, white); */
 `;
 
 const Reset = styled.button`
@@ -71,6 +72,7 @@ const Reset = styled.button`
   background-color: inherit;
   text-align: center;
   outline: inherit;
+  cursor: pointer;
 `;
 
 const EndScreen = () => {

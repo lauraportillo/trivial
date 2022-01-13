@@ -36,6 +36,7 @@ const Button = styled.button`
   background-color: inherit;
   text-align: center;
   outline: inherit;
+  cursor: pointer;
 `;
 
 const Question = () => {

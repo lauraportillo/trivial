@@ -58,6 +58,7 @@ const NextButton = styled.button`
   background-color: black;
   text-align: center;
   outline: inherit;
+  cursor: pointer;
 `;
 const FinishButton = styled.button`
   font-family: 'Roboto Condensed', sans-serif;
@@ -71,6 +72,7 @@ const FinishButton = styled.button`
   background-color: black;
   text-align: center;
   outline: inherit;
+  cursor: pointer;
 `;
 
 const Quiz = () => {
