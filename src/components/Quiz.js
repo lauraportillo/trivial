@@ -38,6 +38,14 @@ const Main = styled.main`
   align-items: center;
 `;
 
+const Subtitle = styled.h2`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  text-transform: uppercase;
+`;
+
 const Quiz = () => {
   const { setGameState, score, setScore, currentQuestion, setCurrentQuestion, optionChosen } =
     useContext(GameStateContext);
@@ -64,7 +72,7 @@ const Quiz = () => {
         <Title>arts&trivial</Title>
       </Header>
       <Main>
-        <h2> Question {counter} of 10</h2>
+        <Subtitle> Question {counter} of 10</Subtitle>
         <Question />
         {currentQuestion === Questions.length - 1 ? (
           <button onClick={finishQuiz} id="nextQuestion">
