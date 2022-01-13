@@ -51,7 +51,7 @@ const EndScreen = () => {
         <Title>arts&trivial</Title>
       </Header>
       <Main>
-        <div>THE END</div>
+        <div>here is your score!</div>
         <h2>
           {score} / {Questions.length}
         </h2>

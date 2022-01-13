@@ -74,53 +74,51 @@ const Quiz = () => {
         <Title>arts&trivial</Title>
       </Header>
       <Main>
-        <section>
-          <h2> Question {counter} of 10</h2>
+        <h2> Question {counter} of 10</h2>
 
-          <h2> {Questions[currentQuestion].question}</h2>
+        <h2> {Questions[currentQuestion].question}</h2>
 
-          <div>
-            <button
-              onClick={() => {
-                chooseOption(Questions[currentQuestion].correct_answer);
-              }}
-            >
-              {Questions[currentQuestion].correct_answer}
-            </button>
-            <button
-              onClick={() => {
-                chooseOption(Questions[currentQuestion].incorrect_answers[0]);
-              }}
-            >
-              {Questions[currentQuestion].incorrect_answers[0]}
-            </button>
+        <div>
+          <button
+            onClick={() => {
+              chooseOption(Questions[currentQuestion].correct_answer);
+            }}
+          >
+            {Questions[currentQuestion].correct_answer}
+          </button>
+          <button
+            onClick={() => {
+              chooseOption(Questions[currentQuestion].incorrect_answers[0]);
+            }}
+          >
+            {Questions[currentQuestion].incorrect_answers[0]}
+          </button>
 
-            <button
-              onClick={() => {
-                chooseOption(Questions[currentQuestion].incorrect_answers[1]);
-              }}
-            >
-              {Questions[currentQuestion].incorrect_answers[1]}
-            </button>
-            <button
-              onClick={() => {
-                chooseOption(Questions[currentQuestion].incorrect_answers[2]);
-              }}
-            >
-              {Questions[currentQuestion].incorrect_answers[2]}
-            </button>
-          </div>
+          <button
+            onClick={() => {
+              chooseOption(Questions[currentQuestion].incorrect_answers[1]);
+            }}
+          >
+            {Questions[currentQuestion].incorrect_answers[1]}
+          </button>
+          <button
+            onClick={() => {
+              chooseOption(Questions[currentQuestion].incorrect_answers[2]);
+            }}
+          >
+            {Questions[currentQuestion].incorrect_answers[2]}
+          </button>
+        </div>
 
-          {currentQuestion === Questions.length - 1 ? (
-            <button onClick={finishQuiz} id="finishquiz">
-              Finish Quiz
-            </button>
-          ) : (
-            <button onClick={nextQuestion} id="nextQuestion">
-              Next Question
-            </button>
-          )}
-        </section>
+        {currentQuestion === Questions.length - 1 ? (
+          <button onClick={finishQuiz} id="finishquiz">
+            Finish Quiz
+          </button>
+        ) : (
+          <button onClick={nextQuestion} id="nextQuestion">
+            Next Question
+          </button>
+        )}
       </Main>
       <FooterBlack />
     </Container>
