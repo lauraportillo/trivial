@@ -55,12 +55,7 @@ const Question = () => {
     setOptionChosen(option);
   };
 
-  const responses = [
-    Questions[currentQuestion].correct_answer,
-    Questions[currentQuestion].incorrect_answers[0],
-    Questions[currentQuestion].incorrect_answers[1],
-    Questions[currentQuestion].incorrect_answers[2],
-  ];
+  const responses = [Questions[currentQuestion].correct_answer, ...Questions[currentQuestion].incorrect_answers];
 
   // random responses
   responses.sort(function () {
