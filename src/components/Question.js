@@ -24,6 +24,19 @@ const List = styled.ul`
   color: black;
   margin-top: 20px;
 `;
+const Button = styled.button`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 5px;
+  width: 190px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid black 1px;
+  background-color: inherit;
+  text-align: center;
+  outline: inherit;
+`;
 
 const Question = () => {
   const { currentQuestion, setOptionChosen } = useContext(GameStateContext);
@@ -48,13 +61,13 @@ const Question = () => {
     return responses.map((response, index) => {
       return (
         <li key={index}>
-          <button
+          <Button
             onClick={() => {
               chooseOption(response);
             }}
           >
             {response}
-          </button>
+          </Button>
         </li>
       );
     });

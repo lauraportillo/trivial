@@ -23,7 +23,7 @@ const Header = styled.header`
 const Title = styled.h1`
   font-family: 'Nixie One', cursive;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 900;
   color: black;
   margin-top: 30px;
   @media (min-width: 768px) {
