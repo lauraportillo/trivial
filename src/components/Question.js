@@ -77,26 +77,6 @@ const Question = () => {
       );
     });
   };
-  //  // random responses
-  //  responses.sort(function () {
-  //   return Math.random() - 0.5;
-  // });
-
-  // const renderButton = () => {
-  //   return responses.map((response, index) => {
-  //     return (
-  //       <li key={index}>
-  //         <Button
-  //           onClick={() => {
-  //             chooseOption(response);
-  //           }}
-  //         >
-  //           {response}
-  //         </Button>
-  //       </li>
-  //     );
-  //   });
-  // };
 
   return (
     <>
@@ -104,38 +84,6 @@ const Question = () => {
       <section>
         <List>{renderButton()} </List>
       </section>
-
-      {/* <Options>
-        <button
-          onClick={() => {
-            chooseOption(Questions[currentQuestion].correct_answer);
-          }}
-        >
-          {Questions[currentQuestion].correct_answer}
-        </button>
-        <button
-          onClick={() => {
-            chooseOption(Questions[currentQuestion].incorrect_answers[0]);
-          }}
-        >
-          {Questions[currentQuestion].incorrect_answers[0]}
-        </button>
-
-        <button
-          onClick={() => {
-            chooseOption(Questions[currentQuestion].incorrect_answers[1]);
-          }}
-        >
-          {Questions[currentQuestion].incorrect_answers[1]}
-        </button>
-        <button
-          onClick={() => {
-            chooseOption(Questions[currentQuestion].incorrect_answers[2]);
-          }}
-        >
-          {Questions[currentQuestion].incorrect_answers[2]}
-        </button>
-      </Options> */}
     </>
   );
 };
