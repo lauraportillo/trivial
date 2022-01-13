@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
+import Question from './Question';
 import FooterBlack from './FooterBlack';
 // Styles
 import styled from 'styled-components';
@@ -39,11 +40,20 @@ const Main = styled.main`
 `;
 
 const Quiz = () => {
-  //state
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [optionChosen, setOptionChosen] = useState('');
+  // //state
+  // const [currentQuestion, setCurrentQuestion] = useState(0);
+  // const [optionChosen, setOptionChosen] = useState('');
 
-  const { score, setScore, gameState, setGameState } = useContext(GameStateContext);
+  const {
+    gameState,
+    setGameState,
+    score,
+    setScore,
+    currentQuestion,
+    setCurrentQuestion,
+    optionChosen,
+    setOptionChosen,
+  } = useContext(GameStateContext);
 
   const chooseOption = (option) => {
     setOptionChosen(option);
@@ -75,8 +85,9 @@ const Quiz = () => {
       </Header>
       <Main>
         <h2> Question {counter} of 10</h2>
+        <Question />
 
-        <h2> {Questions[currentQuestion].question}</h2>
+        {/* <h2> {Questions[currentQuestion].question}</h2>
 
         <div>
           <button
@@ -108,7 +119,7 @@ const Quiz = () => {
           >
             {Questions[currentQuestion].incorrect_answers[2]}
           </button>
-        </div>
+        </div> */}
 
         {currentQuestion === Questions.length - 1 ? (
           <button onClick={finishQuiz} id="finishquiz">
