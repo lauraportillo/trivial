@@ -18,6 +18,18 @@ const Question = () => {
     setOptionChosen(option);
   };
 
+  const responses = [
+    Questions[currentQuestion].correct_answer,
+    Questions[currentQuestion].incorrect_answers[0],
+    Questions[currentQuestion].incorrect_answers[1],
+    Questions[currentQuestion].incorrect_answers[2],
+  ];
+
+  // random responses
+  responses.sort(function () {
+    return Math.random() - 0.5;
+  });
+
   return (
     <Container>
       <h2> {Questions[currentQuestion].question}</h2>
