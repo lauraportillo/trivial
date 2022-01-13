@@ -59,6 +59,15 @@ const NextButton = styled.button`
   text-align: center;
   outline: inherit;
   cursor: pointer;
+  position: relative;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: grey;
+    border: solid grey 1px;
+    top: 2px;
+  }
 `;
 const FinishButton = styled.button`
   font-family: 'Roboto Condensed', sans-serif;
@@ -73,6 +82,15 @@ const FinishButton = styled.button`
   text-align: center;
   outline: inherit;
   cursor: pointer;
+  position: relative;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: grey;
+    border: solid grey 1px;
+    top: 2px;
+  }
 `;
 
 const Quiz = () => {

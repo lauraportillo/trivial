@@ -38,7 +38,6 @@ const Button = styled.button`
   outline: inherit;
   cursor: pointer;
   position: relative;
-
   &:hover {
     opacity: 0.6;
   }
