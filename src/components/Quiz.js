@@ -46,6 +46,20 @@ const Subtitle = styled.h2`
   text-transform: uppercase;
 `;
 
+const NextButton = styled.button`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 20px;
+  width: 190px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid black 1px;
+  background-color: black;
+  text-align: center;
+  outline: inherit;
+`;
+
 const Quiz = () => {
   const { setGameState, score, setScore, currentQuestion, setCurrentQuestion, optionChosen } =
     useContext(GameStateContext);
@@ -75,13 +89,13 @@ const Quiz = () => {
         <Subtitle> Question {counter} of 10</Subtitle>
         <Question />
         {currentQuestion === Questions.length - 1 ? (
-          <button onClick={finishQuiz} id="nextQuestion">
+          <button onClick={finishQuiz} id="finishQuiz">
             Finish Quiz
           </button>
         ) : (
-          <button onClick={nextQuestion} id="nextQuestion">
+          <NextButton onClick={nextQuestion} id="nextQuestion">
             Next Question
-          </button>
+          </NextButton>
         )}
       </Main>
       <FooterBlack />
