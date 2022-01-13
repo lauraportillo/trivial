@@ -37,6 +37,16 @@ const Button = styled.button`
   text-align: center;
   outline: inherit;
   cursor: pointer;
+  position: relative;
+
+  &:hover {
+    opacity: 0.6;
+  }
+  &:active {
+    background-color: grey;
+    color: white;
+    top: 2px;
+  }
 `;
 
 const Question = () => {
@@ -73,6 +83,26 @@ const Question = () => {
       );
     });
   };
+  //  // random responses
+  //  responses.sort(function () {
+  //   return Math.random() - 0.5;
+  // });
+
+  // const renderButton = () => {
+  //   return responses.map((response, index) => {
+  //     return (
+  //       <li key={index}>
+  //         <Button
+  //           onClick={() => {
+  //             chooseOption(response);
+  //           }}
+  //         >
+  //           {response}
+  //         </Button>
+  //       </li>
+  //     );
+  //   });
+  // };
 
   return (
     <>
