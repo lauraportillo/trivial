@@ -38,11 +38,13 @@ const Main = styled.main`
 `;
 
 const EndScreen = () => {
-  const { score, setScore, setGameState } = useContext(GameStateContext);
+  const { setGameState, score, setScore, setCurrentQuestion, setOptionChosen } = useContext(GameStateContext);
 
   const restartQuiz = () => {
     setScore(0);
     setGameState('menu');
+    setCurrentQuestion(0);
+    setOptionChosen('');
   };
 
   return (

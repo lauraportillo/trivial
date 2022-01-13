@@ -67,7 +67,7 @@ const Quiz = () => {
         <h2> Question {counter} of 10</h2>
         <Question />
         {currentQuestion === Questions.length - 1 ? (
-          <button onClick={finishQuiz} id="finishquiz">
+          <button onClick={finishQuiz} id="nextQuestion">
             Finish Quiz
           </button>
         ) : (
