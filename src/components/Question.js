@@ -13,7 +13,7 @@ const Title = styled.h2`
   margin-top: 20px;
 `;
 
-const Options = styled.div`
+const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,15 +45,17 @@ const Question = () => {
   });
 
   const renderButton = () => {
-    return responses.map((response) => {
+    return responses.map((response, index) => {
       return (
-        <button
-          onClick={() => {
-            chooseOption(response);
-          }}
-        >
-          {response}
-        </button>
+        <li key={index}>
+          <button
+            onClick={() => {
+              chooseOption(response);
+            }}
+          >
+            {response}
+          </button>
+        </li>
       );
     });
   };
@@ -61,8 +63,9 @@ const Question = () => {
   return (
     <>
       <Title> {Questions[currentQuestion].question}</Title>
-
-      {renderButton()}
+      <section>
+        <List>{renderButton()} </List>
+      </section>
 
       {/* <Options>
         <button
