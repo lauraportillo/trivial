@@ -32,34 +32,39 @@ const Question = () => {
     setOptionChosen(option);
   };
 
-  //   const responses = [
-  //     Questions[currentQuestion].correct_answer,
-  //     Questions[currentQuestion].incorrect_answers[0],
-  //     Questions[currentQuestion].incorrect_answers[1],
-  //     Questions[currentQuestion].incorrect_answers[2],
-  //   ];
+  const responses = [
+    Questions[currentQuestion].correct_answer,
+    Questions[currentQuestion].incorrect_answers[0],
+    Questions[currentQuestion].incorrect_answers[1],
+    Questions[currentQuestion].incorrect_answers[2],
+  ];
 
-  //   // random responses
-  //   responses.sort(function () {
-  //     return Math.random() - 0.5;
-  //   });
+  // random responses
+  responses.sort(function () {
+    return Math.random() - 0.5;
+  });
 
-  //   const renderButton = () => {
-  //     responses.forEach((response) => {
-  //       <button
-  //         onClick={() => {
-  //           chooseOption(response);
-  //         }}
-  //       >
-  //         {response}
-  //       </button>;
-  //     });
-  //   };
+  const renderButton = () => {
+    return responses.map((response) => {
+      return (
+        <button
+          onClick={() => {
+            chooseOption(response);
+          }}
+        >
+          {response}
+        </button>
+      );
+    });
+  };
 
   return (
     <>
       <Title> {Questions[currentQuestion].question}</Title>
-      <Options>
+
+      {renderButton()}
+
+      {/* <Options>
         <button
           onClick={() => {
             chooseOption(Questions[currentQuestion].correct_answer);
@@ -89,7 +94,7 @@ const Question = () => {
         >
           {Questions[currentQuestion].incorrect_answers[2]}
         </button>
-      </Options>
+      </Options> */}
     </>
   );
 };
