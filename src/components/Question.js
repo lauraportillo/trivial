@@ -55,6 +55,7 @@ const Button = styled.button`
 const Question = (props) => {
   const chooseOption = (option) => {
     props.setOptionChosen(option);
+    props.userAnswers[props.currentQuestion] = option;
   };
   if (!Questions[props.currentQuestion].responses) {
     Questions[props.currentQuestion].responses = [

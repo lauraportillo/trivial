@@ -1,5 +1,6 @@
 // React
-import { Questions } from '../data/Questions';
+import { useContext } from 'react';
+import { GameStateContext } from '../context/QuizContext';
 // Styles
 import styled from 'styled-components';
 
@@ -15,14 +16,20 @@ const List = styled.ul`
   margin-top: 20px;
 `;
 
-const ResponsesList = (props) => {
-  const counter = props.currentQuestion + 1;
+const ResponsesList = () => {
+  const { userAnswers } = useContext(GameStateContext);
 
   return (
     <List>
-      <li>
-        Answer {counter}:{props.optionChosen}
-      </li>
+      {userAnswers.map((userAnswer, index) => {
+        console.log(userAnswer);
+
+        return (
+          <li key={index}>
+            Answer {index + 1}:{userAnswer}
+          </li>
+        );
+      })}
     </List>
   );
 };

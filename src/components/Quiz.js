@@ -103,9 +103,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState('');
 
-  console.log(optionChosen);
-
-  const { setGameState, score, setScore } = useContext(GameStateContext);
+  const { setGameState, score, setScore, userAnswers } = useContext(GameStateContext);
 
   const nextQuestion = () => {
     if (Questions[currentQuestion].correct_answer === optionChosen) {
@@ -130,7 +128,7 @@ const Quiz = () => {
       </Header>
       <Main>
         <Subtitle> Question {counter} of 10</Subtitle>
-        <Question currentQuestion={currentQuestion} setOptionChosen={setOptionChosen} />
+        <Question currentQuestion={currentQuestion} setOptionChosen={setOptionChosen} userAnswers={userAnswers} />
         {currentQuestion === Questions.length - 1 ? (
           <FinishButton onClick={finishQuiz} id="finishQuiz">
             Finish Quiz
@@ -140,7 +138,7 @@ const Quiz = () => {
             Next Question
           </NextButton>
         )}
-        <ResponsesList currentQuestion={currentQuestion} optionChosen={optionChosen} />
+        <ResponsesList />
       </Main>
       <FooterBlack />
     </Container>
