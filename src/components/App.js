@@ -1,10 +1,12 @@
 // React
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
 import Landing from './Landing';
 import Quiz from './Quiz';
 import EndScreen from './EndScreen';
+// Services
+import getDataFromApi from '../services/getDataFromApi';
 // Styles
 import { createGlobalStyle } from 'styled-components';
 
@@ -21,13 +23,21 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => {
   // Global state
+  const [questions, setQuestions] = useState([]);
   const [gameState, setGameState] = useState('menu');
   const [score, setScore] = useState(0);
   const [userAnswers] = useState([]);
 
+  //vida del componente y promesa
+  useEffect(() => {
+    console.log(getDataFromApi());
+    getDataFromApi().then((data) => setQuestions(data));
+  }, []);
+
   return (
     <GameStateContext.Provider
       value={{
+        questions,
         gameState,
         setGameState,
         score,
