@@ -78,6 +78,6 @@ export const Questions = [
     difficulty: 'easy',
     question: 'Which painting was not made by Vincent Van Gogh?',
     correct_answer: 'The Ninth Wave',
-    incorrect_answers: ['Cafeacute; Terrace at Night', 'Bedroom In Arles', 'Starry Night'],
+    incorrect_answers: ['Café Terrace at Night', 'Bedroom In Arles', 'Starry Night'],
   },
 ];
