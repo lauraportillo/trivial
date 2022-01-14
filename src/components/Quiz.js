@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
 import Question from './Question';
+import ResponsesList from './ResponsesList';
 import FooterBlack from './FooterBlack';
 // Styles
 import styled from 'styled-components';
@@ -137,6 +138,7 @@ const Quiz = () => {
             Next Question
           </NextButton>
         )}
+        <ResponsesList currentQuestion={currentQuestion} optionChosen={optionChosen} />
       </Main>
       <FooterBlack />
     </Container>
