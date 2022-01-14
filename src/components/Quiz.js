@@ -1,5 +1,6 @@
 // React
 import { Questions } from '../data/Questions';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
@@ -97,8 +98,11 @@ const FinishButton = styled.button`
 `;
 
 const Quiz = () => {
-  const { setGameState, score, setScore, currentQuestion, setCurrentQuestion, optionChosen } =
-    useContext(GameStateContext);
+  // State
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [optionChosen, setOptionChosen] = useState('');
+
+  const { setGameState, score, setScore } = useContext(GameStateContext);
 
   const nextQuestion = () => {
     if (Questions[currentQuestion].correct_answer === optionChosen) {
@@ -123,7 +127,7 @@ const Quiz = () => {
       </Header>
       <Main>
         <Subtitle> Question {counter} of 10</Subtitle>
-        <Question />
+        <Question currentQuestion={currentQuestion} setOptionChosen={setOptionChosen} />
         {currentQuestion === Questions.length - 1 ? (
           <FinishButton onClick={finishQuiz} id="finishQuiz">
             Finish Quiz

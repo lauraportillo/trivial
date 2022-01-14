@@ -1,7 +1,5 @@
 // React
 import { Questions } from '../data/Questions';
-import { useContext } from 'react';
-import { GameStateContext } from '../context/QuizContext';
 // Styles
 import styled from 'styled-components';
 
@@ -54,14 +52,15 @@ const Button = styled.button`
   }
 `;
 
-const Question = () => {
-  const { currentQuestion, setOptionChosen } = useContext(GameStateContext);
-
+const Question = (props) => {
   const chooseOption = (option) => {
-    setOptionChosen(option);
+    props.setOptionChosen(option);
   };
 
-  const responses = [Questions[currentQuestion].correct_answer, ...Questions[currentQuestion].incorrect_answers];
+  const responses = [
+    Questions[props.currentQuestion].correct_answer,
+    ...Questions[props.currentQuestion].incorrect_answers,
+  ];
 
   // random responses
   responses.sort(function () {
@@ -86,7 +85,7 @@ const Question = () => {
 
   return (
     <>
-      <Title> {Questions[currentQuestion].question}</Title>
+      <Title> {Questions[props.currentQuestion].question}</Title>
       <section>
         <List>{renderButton()} </List>
       </section>

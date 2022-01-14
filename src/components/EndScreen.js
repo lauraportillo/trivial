@@ -84,13 +84,13 @@ const Reset = styled.button`
 `;
 
 const EndScreen = () => {
-  const { setGameState, score, setScore, setCurrentQuestion, setOptionChosen } = useContext(GameStateContext);
+  const { gameState, setGameState, score, setScore } = useContext(GameStateContext);
 
   const restartQuiz = () => {
     setScore(0);
     setGameState('menu');
-    setCurrentQuestion(0);
-    setOptionChosen('');
+    // setCurrentQuestion(0);
+    // setOptionChosen('');
   };
 
   return (
