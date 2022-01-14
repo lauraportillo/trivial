@@ -44,6 +44,9 @@ const Subtitle = styled.h2`
   font-weight: 400;
   color: black;
   text-transform: uppercase;
+  @media (min-width: 768px) {
+    font-size: 25px;
+  }
 `;
 
 const NextButton = styled.button`

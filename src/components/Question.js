@@ -11,6 +11,12 @@ const Title = styled.h2`
   font-weight: 400;
   color: black;
   margin-top: 20px;
+  width: 280px;
+  text-align: center;
+  @media (min-width: 768px) {
+    font-size: 25px;
+    width: 480px;
+  }
 `;
 
 const List = styled.ul`
