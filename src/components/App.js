@@ -23,9 +23,9 @@ const App = () => {
   // Global state
   const [gameState, setGameState] = useState('menu');
   const [score, setScore] = useState(0);
-  const [gamerAnswer, setGamerAnswer] = useState('');
+  const [userAnswers, setUserAnswers] = useState('');
 
-  console.log(gamerAnswer);
+  console.log(userAnswers);
 
   return (
     <GameStateContext.Provider
@@ -34,8 +34,8 @@ const App = () => {
         setGameState,
         score,
         setScore,
-        gamerAnswer,
-        setGamerAnswer,
+        userAnswers,
+        setUserAnswers,
       }}
     >
       <GlobalStyle />
