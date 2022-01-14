@@ -56,19 +56,19 @@ const Question = (props) => {
   const chooseOption = (option) => {
     props.setOptionChosen(option);
   };
-
-  const responses = [
-    Questions[props.currentQuestion].correct_answer,
-    ...Questions[props.currentQuestion].incorrect_answers,
-  ];
-
-  // random responses
-  responses.sort(function () {
-    return Math.random() - 0.5;
-  });
+  if (!Questions[props.currentQuestion].responses) {
+    Questions[props.currentQuestion].responses = [
+      Questions[props.currentQuestion].correct_answer,
+      ...Questions[props.currentQuestion].incorrect_answers,
+    ];
+    // random responses
+    Questions[props.currentQuestion].responses.sort(function () {
+      return Math.random() - 0.5;
+    });
+  }
 
   const renderButton = () => {
-    return responses.map((response, index) => {
+    return Questions[props.currentQuestion].responses.map((response, index) => {
       return (
         <li key={index}>
           <Button

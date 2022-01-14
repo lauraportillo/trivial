@@ -105,7 +105,7 @@ const Quiz = () => {
 
   console.log(optionChosen);
 
-  const { setGameState, score, setScore, userAnswers, setUserAnswers } = useContext(GameStateContext);
+  const { setGameState, score, setScore } = useContext(GameStateContext);
 
   const nextQuestion = () => {
     if (Questions[currentQuestion].correct_answer === optionChosen) {
