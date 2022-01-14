@@ -1,5 +1,7 @@
 // React
-import { Questions } from '../data/Questions';
+import { useContext } from 'react';
+import { GameStateContext } from '../context/QuizContext';
+// import { questions } from '../data/questions';
 // Styles
 import styled from 'styled-components';
 
@@ -53,23 +55,25 @@ const Button = styled.button`
 `;
 
 const Question = (props) => {
+  const { questions } = useContext(GameStateContext);
+
   const chooseOption = (option) => {
     props.setOptionChosen(option);
     props.userAnswers[props.currentQuestion] = option;
   };
-  if (!Questions[props.currentQuestion].responses) {
-    Questions[props.currentQuestion].responses = [
-      Questions[props.currentQuestion].correct_answer,
-      ...Questions[props.currentQuestion].incorrect_answers,
+  if (!questions[props.currentQuestion].responses) {
+    questions[props.currentQuestion].responses = [
+      questions[props.currentQuestion].correct_answer,
+      ...questions[props.currentQuestion].incorrect_answers,
     ];
     // random responses
-    Questions[props.currentQuestion].responses.sort(function () {
+    questions[props.currentQuestion].responses.sort(function () {
       return Math.random() - 0.5;
     });
   }
 
   const renderButton = () => {
-    return Questions[props.currentQuestion].responses.map((response, index) => {
+    return questions[props.currentQuestion].responses.map((response, index) => {
       return (
         <li key={index}>
           <Button
@@ -86,7 +90,7 @@ const Question = (props) => {
 
   return (
     <>
-      <Title> {Questions[props.currentQuestion].question}</Title>
+      <Title> {questions[props.currentQuestion].question}</Title>
       <section>
         <List>{renderButton()} </List>
       </section>

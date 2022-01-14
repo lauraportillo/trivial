@@ -1,5 +1,5 @@
 // React
-import { Questions } from '../data/Questions';
+// import { questions } from '../data/questions';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
@@ -103,10 +103,10 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState('');
 
-  const { setGameState, score, setScore, userAnswers } = useContext(GameStateContext);
+  const { questions, setGameState, score, setScore, userAnswers } = useContext(GameStateContext);
 
   const nextQuestion = () => {
-    if (Questions[currentQuestion].correct_answer === optionChosen) {
+    if (questions[currentQuestion].correct_answer === optionChosen) {
       setScore(score + 1);
     }
     if (!userAnswers[currentQuestion]) {
@@ -116,7 +116,7 @@ const Quiz = () => {
   };
 
   const finishQuiz = () => {
-    if (Questions[currentQuestion].correct_answer === optionChosen) {
+    if (questions[currentQuestion].correct_answer === optionChosen) {
       setScore(score + 1);
     }
     setGameState('finished');
@@ -132,7 +132,7 @@ const Quiz = () => {
       <Main>
         <Subtitle> Question {counter} of 10</Subtitle>
         <Question currentQuestion={currentQuestion} setOptionChosen={setOptionChosen} userAnswers={userAnswers} />
-        {currentQuestion === Questions.length - 1 ? (
+        {currentQuestion === questions.length - 1 ? (
           <FinishButton onClick={finishQuiz} id="finishQuiz">
             Finish Quiz
           </FinishButton>
