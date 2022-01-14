@@ -109,6 +109,9 @@ const Quiz = () => {
     if (Questions[currentQuestion].correct_answer === optionChosen) {
       setScore(score + 1);
     }
+    if (!userAnswers[currentQuestion]) {
+      userAnswers[currentQuestion] = 'skipped';
+    }
     setCurrentQuestion(currentQuestion + 1);
   };
 
