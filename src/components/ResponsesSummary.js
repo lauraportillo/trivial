@@ -15,10 +15,10 @@ const List = styled.ul`
   margin-bottom: 40px;
   width: 240px;
   @media (min-width: 768px) {
-    width: 240px;
+    width: 480px;
+    margin-top: 40px;
   }
 `;
-
 const Summary = styled.h2`
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;
@@ -26,8 +26,10 @@ const Summary = styled.h2`
   color: black;
   margin-bottom: 10px;
   text-transform: uppercase;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
-
 const Item = styled.li`
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 12px;
@@ -65,13 +67,6 @@ const ResponsesSummary = () => {
                 {index + 1} {questions[index].question}
               </ItemPara>
               <ItemPara>Your answer: {userAnswer}</ItemPara>
-              {/* <ItemGrey>
-                {userAnswer === questions[index].correct_answer ? (
-                  <i className="fa fa-check-circle"></i>
-                ) : (
-                  <i className="fa fa-times-circle"> </i>
-                )}
-              </ItemGrey> */}
               <ItemGrey>Correct answer: {questions[index].correct_answer}</ItemGrey>
             </ItemSection>
           </Item>
