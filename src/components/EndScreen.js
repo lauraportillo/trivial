@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
+import ResponsesSummary from './ResponsesSummary';
 import FooterBlack from './FooterBlack';
 // Styles
 import styled from 'styled-components';
@@ -115,6 +116,7 @@ const EndScreen = () => {
         </ScoreBox>
 
         <Reset onClick={restartQuiz}>Restart Quiz</Reset>
+        <ResponsesSummary />
       </Main>
       <FooterBlack />
     </Container>
