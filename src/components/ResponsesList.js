@@ -64,12 +64,12 @@ const ItemIncorrect = styled.span`
 const ResponsesList = (props) => {
   const { questions, userAnswers } = useContext(GameStateContext);
 
-  // let statusIcon;
-  // if (questions.correct_answer === [props.optionChosen]) {
-  //   statusIcon = <i className="fa fa-check-circle"></i>;
-  // } else {
-  //   statusIcon = <i className="fa fa-times-circle"></i>;
-  // }
+  let statusIcon;
+  if (questions.correct_answer === props.optionChosen) {
+    statusIcon = <i className="fa fa-check-circle"></i>;
+  } else {
+    statusIcon = <i className="fa fa-times-circle"></i>;
+  }
 
   return (
     <List>
@@ -77,7 +77,7 @@ const ResponsesList = (props) => {
         return (
           <li key={index}>
             <Item>
-              {index + 1} {userAnswer}
+              {index + 1} {userAnswer} {statusIcon}
             </Item>
           </li>
         );
