@@ -14,6 +14,7 @@ const List = styled.ul`
   color: black;
   margin-top: 20px;
   margin-bottom: 40px;
+  width: 190px;
 `;
 
 const Item = styled.li`
@@ -21,6 +22,17 @@ const Item = styled.li`
   font-size: 12px;
   color: black;
   margin-bottom: 3px;
+`;
+const ItemSection = styled.section`
+  display: flex;
+  align-items: flex-start;
+`;
+const ItemPara = styled.p`
+  margin-right: 5px;
+`;
+const ItemGrey = styled.p`
+  margin-right: 5px;
+  color: grey;
 `;
 
 const ResponsesList = () => {
@@ -31,12 +43,17 @@ const ResponsesList = () => {
       {userAnswers.map((userAnswer, index) => {
         return (
           <Item key={index}>
-            {index + 1} {userAnswer}
-            {userAnswer === questions[index].correct_answer ? (
-              <i className="fa fa-check-circle"></i>
-            ) : (
-              <i className="fa fa-times-circle"></i>
-            )}
+            <ItemSection>
+              <ItemPara>{index + 1}</ItemPara>
+              <ItemPara>{userAnswer}</ItemPara>
+              <ItemGrey>
+                {userAnswer === questions[index].correct_answer ? (
+                  <i className="fa fa-check-circle"></i>
+                ) : (
+                  <i className="fa fa-times-circle"> </i>
+                )}
+              </ItemGrey>
+            </ItemSection>
           </Item>
         );
       })}
