@@ -63,9 +63,10 @@ const ItemIncorrect = styled.span`
 
 const ResponsesList = (props) => {
   const { questions, userAnswers } = useContext(GameStateContext);
+  console.log(questions);
 
   let statusIcon;
-  if (questions.correct_answer === props.optionChosen) {
+  if (questions === props.optionChosen) {
     statusIcon = <i className="fa fa-check-circle"></i>;
   } else {
     statusIcon = <i className="fa fa-times-circle"></i>;
@@ -74,6 +75,7 @@ const ResponsesList = (props) => {
   return (
     <List>
       {userAnswers.map((userAnswer, index) => {
+        console.log(questions[index].correct_answer);
         return (
           <li key={index}>
             <Item>
@@ -87,3 +89,35 @@ const ResponsesList = (props) => {
 };
 
 export default ResponsesList;
+
+// const renderUserAnswer = () => {
+//   if (questions[index].correct_answer === props.optionChosen) {
+//     return (
+//       <List>
+//         {userAnswers.map((userAnswer, index) => {
+//           return (
+//             <li key={index}>
+//               <ItemCorrect>
+//                 {index + 1} {userAnswer}
+//               </ItemCorrect>
+//             </li>
+//           );
+//         })}
+//       </List>
+//     );
+//   } else {
+//     return (
+//       <List>
+//         {userAnswers.map((userAnswer, index) => {
+//           return (
+//             <li key={index}>
+//               <ItemIncorrect>
+//                 {index + 1} {userAnswer}
+//               </ItemIncorrect>
+//             </li>
+//           );
+//         })}
+//       </List>
+//     );
+//   }
+// };
