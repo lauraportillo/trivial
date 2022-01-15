@@ -39,6 +39,7 @@ const Subtitle = styled.h2`
   font-size: 20px;
   font-weight: 400;
   color: black;
+  margin-top: 40px;
   @media (min-width: 768px) {
     font-size: 40px;
   }

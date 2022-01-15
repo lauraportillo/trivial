@@ -13,10 +13,19 @@ const List = styled.ul`
   color: black;
   margin-top: 20px;
   margin-bottom: 40px;
-  width: 190px;
+  width: 240px;
   @media (min-width: 768px) {
     width: 240px;
   }
+`;
+
+const Summary = styled.h2`
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 `;
 
 const Item = styled.li`
@@ -31,14 +40,15 @@ const Item = styled.li`
 `;
 const ItemSection = styled.section`
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
 `;
 const ItemPara = styled.p`
-  margin-right: 5px;
+  margin-bottom: 3px;
 `;
 const ItemGrey = styled.p`
-  margin-right: 5px;
   color: grey;
+  margin-bottom: 15px;
 `;
 
 const ResponsesSummary = () => {
@@ -46,19 +56,23 @@ const ResponsesSummary = () => {
 
   return (
     <List>
+      <Summary>summary:</Summary>
       {userAnswers.map((userAnswer, index) => {
         return (
           <Item key={index}>
             <ItemSection>
-              <ItemPara>{index + 1}</ItemPara>
-              <ItemPara>{userAnswer}</ItemPara>
-              <ItemGrey>
+              <ItemPara>
+                {index + 1} {questions[index].question}
+              </ItemPara>
+              <ItemPara>Your answer: {userAnswer}</ItemPara>
+              {/* <ItemGrey>
                 {userAnswer === questions[index].correct_answer ? (
                   <i className="fa fa-check-circle"></i>
                 ) : (
                   <i className="fa fa-times-circle"> </i>
                 )}
-              </ItemGrey>
+              </ItemGrey> */}
+              <ItemGrey>Correct answer: {questions[index].correct_answer}</ItemGrey>
             </ItemSection>
           </Item>
         );
