@@ -7,7 +7,7 @@ const get = (key) => {
   return JSON.parse(localStorageData);
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
+// eslint-disable-next-line
 export default {
   get: get,
   set: set,

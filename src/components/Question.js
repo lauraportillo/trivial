@@ -1,7 +1,6 @@
 // React
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
-// import { questions } from '../data/questions';
 // Styles
 import styled from 'styled-components';
 
@@ -18,7 +17,6 @@ const Title = styled.h2`
     width: 480px;
   }
 `;
-
 const List = styled.ul`
   display: flex;
   flex-direction: column;

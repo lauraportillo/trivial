@@ -1,5 +1,4 @@
 // React
-// import { questions } from '../data/questions';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
@@ -15,13 +14,11 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
 `;
-
 const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 const Title = styled.h1`
   font-family: 'Nixie One', cursive;
   font-size: 30px;
@@ -39,7 +36,6 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
 `;
-
 const Subtitle = styled.h2`
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
@@ -50,7 +46,6 @@ const Subtitle = styled.h2`
     font-size: 25px;
   }
 `;
-
 const NextButton = styled.button`
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;

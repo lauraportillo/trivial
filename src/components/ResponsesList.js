@@ -22,8 +22,6 @@ const ResponsesList = () => {
   return (
     <List>
       {userAnswers.map((userAnswer, index) => {
-        console.log(userAnswer);
-
         return (
           <li key={index}>
             Answer {index + 1}:{userAnswer}

@@ -1,5 +1,4 @@
 // React
-import { Questions } from '../data/Questions';
 import { useContext } from 'react';
 import { GameStateContext } from '../context/QuizContext';
 // Components
@@ -12,13 +11,11 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
 `;
-
 const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 const Title = styled.h1`
   font-family: 'Nixie One', cursive;
   font-size: 30px;
@@ -42,7 +39,6 @@ const Subtitle = styled.h2`
   font-weight: 400;
   color: black;
 `;
-
 const ScoreBox = styled.h2`
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 30px;
@@ -58,7 +54,6 @@ const ScoreBox = styled.h2`
   justify-content: center;
   align-items: center;
 `;
-
 const Reset = styled.button`
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;
@@ -84,7 +79,7 @@ const Reset = styled.button`
 `;
 
 const EndScreen = () => {
-  const { setGameState, score, setScore } = useContext(GameStateContext);
+  const { questions, setGameState, score, setScore } = useContext(GameStateContext);
 
   const restartQuiz = () => {
     setScore(0);
@@ -99,7 +94,7 @@ const EndScreen = () => {
       <Main>
         <Subtitle>Here is your score!</Subtitle>
         <ScoreBox>
-          {score} / {Questions.length}
+          {score} / {questions.length}
         </ScoreBox>
 
         <Reset onClick={restartQuiz}>Restart Quiz</Reset>
