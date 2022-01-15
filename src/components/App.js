@@ -7,6 +7,7 @@ import Quiz from './Quiz';
 import EndScreen from './EndScreen';
 // Services
 import getDataFromApi from '../services/getDataFromApi';
+
 // Styles
 import { createGlobalStyle } from 'styled-components';
 
