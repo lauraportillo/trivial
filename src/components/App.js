@@ -26,7 +26,7 @@ const App = () => {
   const [questions, setQuestions] = useState([]);
   const [gameState, setGameState] = useState('menu');
   const [score, setScore] = useState(0);
-  const [userAnswers] = useState([]);
+  const [userAnswers, setUserAnswers] = useState([]);
 
   //vida del componente y promesa
   useEffect(() => {
@@ -43,6 +43,7 @@ const App = () => {
         score,
         setScore,
         userAnswers,
+        setUserAnswers,
       }}
     >
       <GlobalStyle />
