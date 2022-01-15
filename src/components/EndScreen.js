@@ -38,6 +38,9 @@ const Subtitle = styled.h2`
   font-size: 20px;
   font-weight: 400;
   color: black;
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
 `;
 const ScoreBox = styled.h2`
   font-family: 'Roboto Condensed', sans-serif;
@@ -53,6 +56,13 @@ const ScoreBox = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: 768px) {
+    font-size: 40px;
+    width: 240px;
+    height: 80px;
+    border-radius: 14px;
+    margin-top: 30px;
+  }
 `;
 const Reset = styled.button`
   font-family: 'Roboto Condensed', sans-serif;
@@ -75,6 +85,12 @@ const Reset = styled.button`
     background-color: grey;
     color: white;
     top: 2px;
+  }
+  @media (min-width: 768px) {
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    border-radius: 14px;
   }
 `;
 

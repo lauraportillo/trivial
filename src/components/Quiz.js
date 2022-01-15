@@ -69,6 +69,12 @@ const NextButton = styled.button`
     border: solid grey 1px;
     top: 2px;
   }
+  @media (min-width: 768px) {
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    border-radius: 14px;
+  }
 `;
 const FinishButton = styled.button`
   font-family: 'Roboto Condensed', sans-serif;
@@ -91,6 +97,12 @@ const FinishButton = styled.button`
     background-color: grey;
     border: solid grey 1px;
     top: 2px;
+  }
+  @media (min-width: 768px) {
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    border-radius: 14px;
   }
 `;
 

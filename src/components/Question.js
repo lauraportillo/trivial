@@ -14,7 +14,7 @@ const Title = styled.h2`
   text-align: center;
   @media (min-width: 768px) {
     font-size: 25px;
-    width: 480px;
+    width: 300px;
   }
 `;
 const List = styled.ul`
@@ -49,6 +49,12 @@ const Button = styled.button`
     background-color: grey;
     color: white;
     top: 2px;
+  }
+  @media (min-width: 768px) {
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    border-radius: 14px;
   }
 `;
 

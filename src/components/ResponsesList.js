@@ -9,12 +9,14 @@ const List = styled.ul`
   flex-direction: column;
   align-items: flex-start;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 14px;
   font-weight: 400;
   color: black;
   margin-top: 20px;
   margin-bottom: 40px;
   width: 190px;
+  @media (min-width: 768px) {
+    width: 240px;
+  }
 `;
 
 const Item = styled.li`
@@ -22,6 +24,10 @@ const Item = styled.li`
   font-size: 12px;
   color: black;
   margin-bottom: 3px;
+  @media (min-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
 `;
 const ItemSection = styled.section`
   display: flex;
