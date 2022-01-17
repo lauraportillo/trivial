@@ -11,6 +11,7 @@ const getDataFromApi = () => {
           incorrect_answers: trivialArt.incorrect_answers.map((answer) => he.decode(answer)),
         };
       });
-    });
+    })
+    .catch((error) => console.log(`an error has occurred: ${error}`));
 };
 export default getDataFromApi;
